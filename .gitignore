@@ -74,3 +74,4 @@ ENV/
 
 # Claude/Anthropic
 .claude/
+node_modules
