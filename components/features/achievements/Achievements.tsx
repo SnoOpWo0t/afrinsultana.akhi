@@ -16,6 +16,8 @@ import {
   Star,
   Trophy,
   X,
+  ChevronLeft,
+  ChevronRight,
   type LucideIcon,
 } from "lucide-react";
 import Section from "@/components/ui/Section";
@@ -332,6 +334,7 @@ export default function Achievements() {
 
   const [selectedAchievement, setSelectedAchievement] =
     useState<Achievement | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showMoreAchievements, setShowMoreAchievements] = useState(false);
 
   const orderedAchievements = useMemo(
@@ -363,6 +366,11 @@ export default function Achievements() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedAchievement]);
+
+  // Reset image index when opening a new achievement
+  useEffect(() => {
+    setCurrentImageIndex(0);
   }, [selectedAchievement]);
 
   return (
@@ -515,14 +523,63 @@ export default function Achievements() {
                 </p>
               </div>
 
-              <div className="p-8">
-                <Image
-                  src={selectedAchievement.certificateImage}
-                  alt={`${selectedAchievement.title} certificate`}
-                  width={1200}
-                  height={800}
-                  className="mx-auto max-h-[calc(90vh-10rem)] max-w-full rounded-lg object-contain"
-                />
+              <div className="relative p-8 flex items-center justify-center group">
+                {selectedAchievement.certificateImages && selectedAchievement.certificateImages.length > 1 ? (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => 
+                          prev === 0 ? selectedAchievement.certificateImages!.length - 1 : prev - 1
+                        );
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-ctp-surface0/80 p-2 text-ctp-text opacity-0 transition-all hover:bg-ctp-surface1 group-hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <Image
+                      src={selectedAchievement.certificateImages[currentImageIndex]}
+                      alt={`${selectedAchievement.title} certificate ${currentImageIndex + 1}`}
+                      width={1200}
+                      height={800}
+                      className="mx-auto max-h-[calc(90vh-10rem)] max-w-full rounded-lg object-contain transition-opacity duration-300"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => 
+                          prev === selectedAchievement.certificateImages!.length - 1 ? 0 : prev + 1
+                        );
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 rounded-full bg-ctp-surface0/80 p-2 text-ctp-text opacity-0 transition-all hover:bg-ctp-surface1 group-hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                    
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {selectedAchievement.certificateImages.map((_, i) => (
+                        <div
+                          key={i}
+                          className={`h-1.5 rounded-full transition-all ${
+                            i === currentImageIndex 
+                              ? "w-4 bg-ctp-blue" 
+                              : "w-1.5 bg-ctp-surface1"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Image
+                    src={selectedAchievement.certificateImage || selectedAchievement.certificateImages?.[0] || ""}
+                    alt={`${selectedAchievement.title} certificate`}
+                    width={1200}
+                    height={800}
+                    className="mx-auto max-h-[calc(90vh-10rem)] max-w-full rounded-lg object-contain"
+                  />
+                )}
               </div>
             </motion.div>
           </motion.div>

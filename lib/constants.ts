@@ -367,6 +367,7 @@ export interface Achievement {
   description: string;
   link: string | null;
   certificateImage: string | null;
+  certificateImages?: string[];
   type: AchievementType;
   viewType: AchievementViewType;
   featured?: boolean;
@@ -437,6 +438,10 @@ export const ACHIEVEMENTS: Achievement[] = [
       "Received academic excellence awards for maintaining high CGPA across multiple semesters",
     link: null,
     certificateImage: "/certificates/vc-deans-awards.jpg",
+    certificateImages: [
+      "/certificates/vc-deans-awards.jpg",
+      "/certificates/Certidicate 2.jpg",
+    ],
     type: "academic",
     viewType: "image",
     featured: true,
