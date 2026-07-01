@@ -179,8 +179,8 @@ function AchievementCard({
     : "group-hover:-translate-y-0.5 group-hover:scale-105";
   const iconRotateClasses =
     reducedMotion ||
-    achievement.type === "volunteer" ||
-    achievement.type === "training"
+      achievement.type === "volunteer" ||
+      achievement.type === "training"
       ? ""
       : "group-hover:rotate-6";
 
@@ -192,36 +192,32 @@ function AchievementCard({
       variants={getCardVariants(reducedMotion)}
       whileHover={reducedMotion ? undefined : { y: -4 }}
       transition={{ duration: 0.25, ease }}
-      className={`group relative h-full w-full [perspective:2000px] ${
-        isFeatured ? "min-h-[228px]" : "min-h-[204px]"
-      }`}
+      className={`group relative h-full w-full [perspective:2000px] ${isFeatured ? "min-h-[228px]" : "min-h-[204px]"
+        }`}
       onMouseEnter={() => !reducedMotion && setIsFlipped(true)}
       onMouseLeave={() => !reducedMotion && setIsFlipped(false)}
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div
-        className={`relative h-full w-full [transform-style:preserve-3d] transition-transform duration-700 cursor-pointer ${
-          isFlipped ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"
-        }`}
+        className={`relative h-full w-full [transform-style:preserve-3d] transition-transform duration-700 cursor-pointer ${isFlipped ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"
+          }`}
       >
         {/* Front face */}
         <article
-          className={`relative h-full w-full overflow-hidden rounded-2xl border p-5 backdrop-blur-sm transition-[border-color,background-color] duration-300 [backface-visibility:hidden] ${
-            isFeatured
+          className={`relative h-full w-full overflow-hidden rounded-2xl border p-5 backdrop-blur-sm transition-[border-color,background-color] duration-300 [backface-visibility:hidden] ${isFeatured
               ? "border-ctp-surface1/70 bg-ctp-surface0/45"
               : "border-ctp-surface0/60 bg-ctp-surface0/30 group-hover:border-ctp-surface1 group-hover:bg-ctp-surface0/45"
-          }`}
+            }`}
         >
           <div
-            className={`pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full ${style.glow} blur-3xl transition-opacity duration-300 ${
-              reducedMotion
+            className={`pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full ${style.glow} blur-3xl transition-opacity duration-300 ${reducedMotion
                 ? isFeatured
                   ? "opacity-45"
                   : "opacity-0"
                 : isFeatured
                   ? "opacity-55 group-hover:opacity-70"
                   : "opacity-0 group-hover:opacity-85"
-            }`}
+              }`}
           />
 
           <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -271,11 +267,10 @@ function AchievementCard({
 
         {/* Back face */}
         <article
-          className={`absolute inset-0 h-full w-full overflow-hidden rounded-2xl border p-4 backdrop-blur-sm [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col ${
-            isFeatured
+          className={`absolute inset-0 h-full w-full overflow-hidden rounded-2xl border p-4 backdrop-blur-sm [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col ${isFeatured
               ? "border-ctp-surface1/70 bg-ctp-surface0/45"
               : "border-ctp-surface0/60 bg-ctp-surface0/30 group-hover:border-ctp-surface1 group-hover:bg-ctp-surface0/45"
-          }`}
+            }`}
         >
           <div className="relative flex-1 w-full overflow-hidden rounded-lg border border-ctp-surface0/50 mb-3 bg-ctp-crust/50">
             {achievement.certificateImage ? (
@@ -529,7 +524,7 @@ export default function Achievements() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        setCurrentImageIndex((prev) => 
+                        setCurrentImageIndex((prev) =>
                           prev === 0 ? selectedAchievement.certificateImages!.length - 1 : prev - 1
                         );
                       }}
@@ -548,7 +543,7 @@ export default function Achievements() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        setCurrentImageIndex((prev) => 
+                        setCurrentImageIndex((prev) =>
                           prev === selectedAchievement.certificateImages!.length - 1 ? 0 : prev + 1
                         );
                       }}
@@ -557,16 +552,15 @@ export default function Achievements() {
                     >
                       <ChevronRight className="h-6 w-6" />
                     </button>
-                    
+
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                       {selectedAchievement.certificateImages.map((_, i) => (
                         <div
                           key={i}
-                          className={`h-1.5 rounded-full transition-all ${
-                            i === currentImageIndex 
-                              ? "w-4 bg-ctp-blue" 
+                          className={`h-1.5 rounded-full transition-all ${i === currentImageIndex
+                              ? "w-4 bg-ctp-blue"
                               : "w-1.5 bg-ctp-surface1"
-                          }`}
+                            }`}
                         />
                       ))}
                     </div>

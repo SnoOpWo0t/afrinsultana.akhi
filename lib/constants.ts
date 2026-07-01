@@ -374,6 +374,7 @@ export interface Achievement {
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
+  /* 
   {
     title: "ICPC Dhaka Regionalist 2024",
     organization: "ICPC",
@@ -396,6 +397,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "competition",
     viewType: "image",
   },
+ */
   {
     title: "BUBT IUCPC 2025",
     organization: "Bangladesh University of Business & Technology",
@@ -418,6 +420,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "competition",
     viewType: "image",
   },
+  /*
   {
     title: "ICPC Jamilur Reza Chowdhury Scholarship",
     organization: "ICPC Foundation",
@@ -430,6 +433,8 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
     featured: true,
   },
+
+  */
   {
     title: "Vice Chancellor Awards (2x) & Dean's Awards (4x)",
     organization: "University of Asia Pacific",
@@ -446,6 +451,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
     featured: true,
   },
+  /* 
   {
     title: "Champion, Ekushey Intra Department Programming Contest 2023",
     organization: "University of Asia Pacific",
@@ -457,6 +463,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
     featured: true,
   },
+  */
   {
     title: "Codeforces Specialist (Max Rating: 1438)",
     organization: "Codeforces",
@@ -501,6 +508,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "certification",
     viewType: "link",
   },
+  /*
   {
     title: "Foundational C# with Microsoft Certification",
     organization: "freeCodeCamp",
@@ -512,6 +520,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "certification",
     viewType: "link",
   },
+  */
   {
     title: "Machine Learning Training Program",
     organization: "Department of CSE, University of Asia Pacific",
@@ -529,7 +538,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Participated in EEE TECH FEST 2.0 Intra University Programming Contest",
     link: null,
-    certificateImage: "/certificates/eee-fest-2.jpg",
+    certificateImage: "",
     type: "competition",
     viewType: "image",
   },
@@ -540,10 +549,11 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Participated in EEE TECH FEST 2023 Intra University Programming Contest",
     link: null,
-    certificateImage: "/certificates/eee-fest-2023.jpg",
+    certificateImage: "",
     type: "competition",
     viewType: "image",
   },
+  /*
   {
     title: "5th Place, Inter Department Math Olympiad 3.0 & 4.0",
     organization: "University of Asia Pacific",
@@ -555,6 +565,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "competition",
     viewType: "image",
   },
+  */
   {
     title: "Volunteer - 11th Convocation of University of Asia Pacific",
     organization: "University of Asia Pacific",
@@ -578,6 +589,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "volunteer",
     viewType: "image",
   },
+  /*
   {
     title: "Volunteer - Prize Giving Ceremony for WMTC Winners",
     organization: "World Mathematics Team Championship",
@@ -589,6 +601,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "volunteer",
     viewType: "image",
   },
+  */
 ];
 
 export const EXPERIENCE = [
