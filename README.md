@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio-dotg
+
+A modern personal portfolio built with Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS v4, featuring bilingual UI (English/Bangla), an AI chatbot, and live competitive programming stats.
+
+## Live Site
+
+- Production: [www.SnoOpWo0t.me](https://www.SnoOpWo0t.me)
+
+## Screenshots and Highlights
+
+- Catppuccin token-based theming (light/dark)
+- Mobile-first responsive sections with motion
+- Floating AI chatbot with streaming responses
+- Floating competitive programming stats panel (Codeforces + LeetCode)
+- Contact form API integration via Resend
+
+## Tech Stack
+
+- Framework: Next.js 16 (App Router)
+- UI: React 19, TypeScript, Tailwind CSS v4
+- Animation: Framer Motion
+- AI: Vercel AI SDK + OpenRouter
+- Email: Resend
+- Smooth scroll: Lenis
+- Package manager: Bun
+
+## Project Structure
+
+```text
+app/
+  api/
+    chat/route.ts
+    contact/route.ts
+    projects-stats/route.ts
+  globals.css
+  layout.tsx
+  page.tsx
+components/
+  features/
+  providers/
+  shared/
+  ui/
+lib/
+  api/
+  i18n/
+  constants.ts
+docs/
+public/
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Bun `>= 1.3`
+- Node.js `>= 20` (recommended for toolchain compatibility)
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/SnoOpWo0t/portfolio-dotg.git
+cd portfolio-dotg
+bun install
+cp .env.local.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Set these in `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+OPENROUTER_API_KEY=your_openrouter_api_key
+RESEND_API_KEY=your_resend_api_key
 
-## Learn More
+# Optional
+RESEND_FROM=Afrin Portfolio <onboarding@resend.dev>
+RESEND_TO=Afrinmdyousuf007@gmail.com
+GITHUB_TOKEN=your_github_token
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `bun run dev` - start local development server
+- `bun run build` - create production build
+- `bun run start` - run production server
+- `bun run lint` - run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Localization
+
+The project supports English (`en`) and Bangla (`bn`) with cookie-based locale persistence and dynamic Bangla text translation support.
+
+- Full guide: [docs/localization-bangla.md](docs/localization-bangla.md)
+
+## API and Feature Docs
+
+- Chatbot architecture and usage: [docs/chatbot.md](docs/chatbot.md)
+- Floating stats API usage: [docs/floating-stats-api.md](docs/floating-stats-api.md)
+- Deployment guide: [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## Core Sections
+
+- Hero
+- About
+- Experience
+- Skills
+- Projects
+- Achievements
+- Contact
+
+## Performance Notes
+
+Recent mobile-focused improvements include:
+
+- Deferred loading of heavy floating overlays (chatbot and stats)
+- Simplified high-cost animations on mobile
+- Responsive floating stats panel as a mobile-safe bottom sheet
+- Lazy stats fetching only when the stats panel is opened
+
+## Customization
+
+Primary content source:
+
+- `lib/constants.ts`
+
+Primary localization source:
+
+- `lib/i18n/translations.ts`
+
+Root shell composition:
+
+- `app/layout.tsx`
+
+Home page composition:
+
+- `app/page.tsx`
+
+## Contributing and Community
+
+- Contributing guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- License: [LICENSE](LICENSE)
+
+## Troubleshooting
+
+- Ensure required env vars are set before using chatbot or contact API.
+- If external APIs rate-limit, UI falls back safely for stats where implemented.
+- Run lint/build locally before opening a pull request.
+
+## Contact
+
+- GitHub: [@SnoOpWo0t](https://github.com/SnoOpWo0t)
+- LinkedIn: [SnoOpWo0t](https://linkedin.com/in/SnoOpWo0t)
+- Email: [Afrinmdyousuf007@gmail.com](mailto:Afrinmdyousuf007@gmail.com)
+
+## Acknowledgements
+
+- Next.js
+- Tailwind CSS
+- Framer Motion
+- Catppuccin
+- OpenRouter
+- Resend
