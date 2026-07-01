@@ -387,6 +387,8 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
     featured: true,
   },
+
+ */
   {
     title: "KUET BITFEST 2025",
     organization: "Khulna University of Engineering & Technology",
@@ -397,7 +399,6 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "competition",
     viewType: "image",
   },
- */
   {
     title: "BUBT IUCPC 2025",
     organization: "Bangladesh University of Business & Technology",
@@ -573,7 +574,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Volunteered in organizing and coordinating the university's convocation ceremony",
     link: null,
-    certificateImage: "/certificates/convocation-volunteer-2025.jpg",
+    certificateImage: "",
     type: "volunteer",
     viewType: "image",
   },
@@ -585,7 +586,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Supported participants and technical arrangements for inclusive technology competition",
     link: null,
-    certificateImage: "/certificates/it-disability-volunteer-2025.png",
+    certificateImage: "",
     type: "volunteer",
     viewType: "image",
   },
@@ -612,7 +613,7 @@ export const EXPERIENCE = [
     startDate: "July 2022",
     endDate: "July 2026 (Expected)",
     description: [
-      "CGPA: 3.81 / 4.00 (after 7 semesters)",
+      "CGPA: 3.51 / 4.00 (after 7 semesters)",
       "Received 2 Vice Chancellor Awards and 4 Dean's Awards",
       "Focus areas: Software Engineering, Web Development, AI/ML, Data Structures & Algorithms",
     ],
