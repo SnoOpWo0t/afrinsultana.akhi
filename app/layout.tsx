@@ -11,6 +11,8 @@ import {
   LOCALE_COOKIE_NAME,
   resolveLocale,
 } from "@/lib/i18n/translations";
+import { Component as CursorFollower } from "@/components/ui/cursor-follower";
+import { Component as SpotlightCursor } from "@/components/ui/spotlight-cursor";
 import "./globals.css";
 
 // Display Font - Bricolage Grotesque for headings
@@ -118,6 +120,8 @@ export default async function RootLayout({
       <body className={`${dmSans.className} antialiased`}>
         <ThemeProvider>
           <LanguageProvider initialLocale={initialLocale}>
+            <CursorFollower />
+            <SpotlightCursor />
             <Header />
             <main className="min-h-screen">{children}</main>
             <Footer />
