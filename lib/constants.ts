@@ -417,7 +417,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Participated in the first Inter University Collaborative Programming Contest at UAP",
     link: null,
-    certificateImage: "/certificates/uap-contest-2024.jpg",
+    certificateImage: "",
     type: "competition",
     viewType: "image",
   },
@@ -437,16 +437,17 @@ export const ACHIEVEMENTS: Achievement[] = [
 
   */
   {
-    title: "Vice Chancellor Awards (2x) & Dean's Awards (4x)",
+    title: "Dean's Awards (2x) & Vice Chancellor Award (1x)",
     organization: "University of Asia Pacific",
     date: "2022-2025",
     description:
       "Received academic excellence awards for maintaining high CGPA across multiple semesters",
     link: null,
-    certificateImage: "/certificates/vc-deans-awards.jpg",
+    certificateImage: "/certificates/Vc Award.jpg",
     certificateImages: [
-      "/certificates/vc-deans-awards.jpg",
-      "/certificates/Certidicate 2.jpg",
+      "/certificates/Vc Award.jpg",
+      "/certificates/dean Awards (1).jpg",
+      "/certificates/dean Awards (2).jpg",
     ],
     type: "academic",
     viewType: "image",
@@ -528,7 +529,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     date: "June 4 - July 2, 2023",
     description: "Completed comprehensive machine learning training program",
     link: null,
-    certificateImage: "/certificates/ml-training-2023.jpg",
+    certificateImage: "",
     type: "training",
     viewType: "image",
   },
@@ -614,19 +615,19 @@ export const EXPERIENCE = [
     endDate: "July 2026 (Expected)",
     description: [
       "CGPA: 3.51 / 4.00 (after 7 semesters)",
-      "Received 2 Vice Chancellor Awards and 4 Dean's Awards",
+      "Received 1 Vice Chancellor Award and 2 Dean's Awards",
       "Focus areas: Software Engineering, Web Development, AI/ML, Data Structures & Algorithms",
     ],
     type: "education",
   },
   {
     title: "Trainee Software Engineer (Intern)",
-    organization: "Bangladesh Software Solution",
+    organization: "Eutropia It Solutions Ltd",
     location: "Dhaka, Bangladesh",
     startDate: "February 2026",
     endDate: "Present",
     description: [
-      "Working on full-stack web development projects with an experienced team",
+      "Working on SQA Projects",
       "Learning industry-standard software engineering practices from experienced mentors",
       "Collaborating with cross-functional teams on international client projects",
     ],
