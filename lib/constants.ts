@@ -464,6 +464,18 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
   */
   {
+    title: "Master Git and Github - Beginner to Expert",
+    organization: "Udemy",
+    date: "2026",
+    description:
+      "Completed the Master Git and Github - Beginner to Expert",
+    link: "https://www.udemy.com/certificate/UC-8e847161-8019-4b28-8b4d-73e80c7ab2bc/",
+    certificateImage: "/certificates/udemy git & github.jpg",
+    type: "certification",
+    viewType: "link",
+  },
+
+  {
     title: "Codeforces Specialist (Max Rating: 1438)",
     organization: "Codeforces",
     date: "Ongoing",
@@ -508,17 +520,6 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "link",
   },
 
-  {
-    title: "Master Git and Github - Beginner to Expert",
-    organization: "Udemy",
-    date: "2026",
-    description:
-      "Completed the Master Git and Github - Beginner to Expert",
-    link: "https://www.udemy.com/certificate/UC-8e847161-8019-4b28-8b4d-73e80c7ab2bc/",
-    certificateImage: "/certificates/udemy git & github.jpg",
-    type: "certification",
-    viewType: "link",
-  },
 
   {
     title: "Machine Learning Training Program",
