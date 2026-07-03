@@ -1,19 +1,5 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=Afrin%20Sultana%20Akhi's%20Portfolio&fontSize=40&animation=fadeIn&fontAlignY=38&desc=Competitive%20Programmer%20%26%20Software%20Developer&descAlignY=51&descAlign=62" alt="Header Banner" />
-  
-  <br />
-
-  [![Deploy with Vercel](https://vercelbadge.vercel.app/api/SnoOpWo0t/portfolio-dotg)](https://www.SnoOpWo0t.me)
-  [![Visitors](https://api.visitorbadge.io/api/visitors?path=SnoOpWo0t%2Fportfolio-dotg&countColor=%23263759&style=flat-square)](https://visitorbadge.io/status?path=SnoOpWo0t%2Fportfolio-dotg)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-  [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-  [![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)](https://react.dev/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-
-  <h3>A modern, bilingual personal portfolio built with Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS v4.</h3>
-
-  [View Live Site](https://www.SnoOpWo0t.me) · [Report Bug](#) · [Request Feature](#)
-</div>
 
 ---
 
@@ -28,7 +14,7 @@
 
 ## 🚀 Live Demo
 
-**Production Website:** [www.SnoOpWo0t.me](https://www.SnoOpWo0t.me)
+**Production Website:** [https://afrinsultana-akhi.vercel.app/](https://afrinsultana-akhi.vercel.app/)
 
 ## 💻 Tech Stack
 
@@ -53,6 +39,7 @@
 ## 🛠️ Getting Started
 
 ### Prerequisites
+
 - [Bun](https://bun.sh/) `>= 1.3`
 - Node.js `>= 20` (recommended for toolchain compatibility)
 
@@ -66,6 +53,7 @@ cp .env.local.example .env.local
 ```
 
 ### Environment Variables
+
 Set these in `.env.local`:
 
 ```env
@@ -79,9 +67,11 @@ GITHUB_TOKEN=your_github_token
 ```
 
 ### Run Locally
+
 ```bash
 bun run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📄 Documentation
