@@ -650,6 +650,30 @@ export const EXPERIENCE = [
 
 export const ORGANIZING_VOLUNTEERING = [
   {
+    title: "Female Moderator at IUB Gaming Fest",
+    date: "",
+    organization: "Independent University, Bangladesh (IUB)",
+    description:
+      "Served as Female Moderator for the inter-university gaming fest, handling the female gaming sector as part of the organizer team",
+    category: "organizer",
+  },
+  {
+    title: "Female Moderator at East West University GameCon Season 1",
+    date: "",
+    organization: "East West University",
+    description:
+      "Served as Female Moderator for the open-for-all gaming competition, handling the female gaming sector as part of the organizer team",
+    category: "organizer",
+  },
+  {
+    title: "Female Moderator at VP Lagbe Valorant Tournament S1",
+    date: "",
+    organization: "VP Lagbe",
+    description:
+      "Served as Female Moderator for the Valorant tournament, handling the female gaming sector as part of the organizer team",
+    category: "organizer",
+  },
+  {
     title:
       "Organizer at the UAP Inter University Collaborative Programming Contest 1.0",
     date: "January 26 & 27, 2024",
