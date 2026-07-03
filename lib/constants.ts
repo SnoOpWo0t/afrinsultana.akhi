@@ -25,32 +25,22 @@ export const PERSONAL_INFO = {
 };
 
 export type AboutCardIconKey =
-  | "code"
-  | "education"
-  | "competitive"
-  | "location"
-  | "current"
-  | "interests";
+  "code" | "education" | "competitive" | "location" | "current" | "interests";
 
 export type AboutCardToneKey =
-  | "blue"
-  | "green"
-  | "yellow"
-  | "pink"
-  | "mauve"
-  | "red";
+  "blue" | "green" | "yellow" | "pink" | "mauve" | "red";
 
 export type AboutCardLayoutKey = "default" | "feature";
 
 export type AboutCardContent =
   | {
-    kind: "paragraph";
-    text: string;
-  }
+      kind: "paragraph";
+      text: string;
+    }
   | {
-    kind: "list";
-    items: string[];
-  };
+      kind: "list";
+      items: string[];
+    };
 
 export interface AboutCard {
   id: string;
@@ -250,7 +240,8 @@ export const SKILL_LOGOS: SkillLogo[] = [
 export const PROJECTS: Project[] = [
   {
     title: "Horizon",
-    description: "Django-based event management website designed to organize, showcase, and book events efficiently. It allows organizers to create and manage events such as conferences, concerts, workshops, and weddings, while users can easily explore and book events online.",
+    description:
+      "Django-based event management website designed to organize, showcase, and book events efficiently. It allows organizers to create and manage events such as conferences, concerts, workshops, and weddings, while users can easily explore and book events online.",
     techStack: ["Django", "Python", "HTML", "CSS", "SQL"],
     githubUrl: "https://github.com/SnoOpWo0t/Horizon-Planners",
     githubRepo: "SnoOpWo0t/Horizon-Planners",
@@ -265,9 +256,11 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "RootReach",
-    description: "PC-component e-commerce platform featuring a product catalog, CRUD operations, cart functionality, and an admin panel.",
+    description:
+      "PC-component e-commerce platform featuring a product catalog, CRUD operations, cart functionality, and an admin panel.",
     techStack: ["Django", "Python", "Tailwind CSS", "SQLite"],
-    githubUrl: "https://github.com/SnoOpWo0t/RootReach-Rural-E-Commerce-Platform",
+    githubUrl:
+      "https://github.com/SnoOpWo0t/RootReach-Rural-E-Commerce-Platform",
     githubRepo: "SnoOpWo0t/RootReach-Rural-E-Commerce-Platform",
     liveUrl: "https://root-reach.vercel.app/",
     featured: true,
@@ -279,7 +272,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Different-Programming-Platform",
-    description: "GitHub repository of 1000+ solutions for problems from Codeforces, LeetCode, and 25+ other online judges. Maintained regularly.",
+    description:
+      "GitHub repository of 1000+ solutions for problems from Codeforces, LeetCode, and 25+ other online judges. Maintained regularly.",
     techStack: ["C", "C++", "Python", "Algorithms", "Data Structures"],
     githubUrl: "https://github.com/SnoOpWo0t/Different-Programming-Platform",
     githubRepo: "SnoOpWo0t/Different-Programming-Platform",
@@ -307,7 +301,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Mini-Compiler",
-    description: "A small-scale compiler implementation demonstrating lexical analysis and parsing techniques.",
+    description:
+      "A small-scale compiler implementation demonstrating lexical analysis and parsing techniques.",
     techStack: ["C++", "Compiler Design", "Flex", "Bison"],
     githubUrl: "https://github.com/SnoOpWo0t/Mini-Compiler",
     githubRepo: "SnoOpWo0t/Mini-Compiler",
@@ -321,7 +316,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "BeeCrowd URI Solutions",
-    description: "A collection of solutions for BeeCrowd (formerly URI Online Judge) programming problems.",
+    description:
+      "A collection of solutions for BeeCrowd (formerly URI Online Judge) programming problems.",
     techStack: ["C", "C++", "Problem Solving"],
     githubUrl: "https://github.com/SnoOpWo0t/BeeCrowd-uri-problem-solution",
     githubRepo: "SnoOpWo0t/BeeCrowd-uri-problem-solution",
@@ -335,7 +331,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Computer Science Notes",
-    description: "A curated repository containing various notes and study materials related to Computer Science.",
+    description:
+      "A curated repository containing various notes and study materials related to Computer Science.",
     techStack: ["Markdown", "Documentation", "Computer Science"],
     githubUrl: "https://github.com/SnoOpWo0t/Computer-Science-Notes-Materials",
     githubRepo: "SnoOpWo0t/Computer-Science-Notes-Materials",
@@ -346,7 +343,7 @@ export const PROJECTS: Project[] = [
     status: "active",
     tags: ["CS Notes", "Study Materials"],
     highlight: "Comprehensive CS resources",
-  }
+  },
 ];
 
 export type AchievementType =

@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=Afrin%20Sultana%20Akhi's%20Portfolio&fontSize=40&animation=fadeIn&fontAlignY=38&desc=Competitive%20Programmer%20%26%20Software%20Developer&descAlignY=51&descAlign=62" alt="Header Banner" />
+</div>
 
 ---
 
