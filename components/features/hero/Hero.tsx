@@ -98,7 +98,7 @@ export default function Hero() {
 
   const heroName =
     locale === "bn"
-      ? { first: "শরীফ", second: "মো. ইউসুফ" }
+      ? { first: "আফরিন সুলতানা ", second: "আখি" }
       : { first: "Afrin Sultana ", second: "Akhi" };
 
   const socialLinks = [
