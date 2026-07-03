@@ -20,6 +20,7 @@ import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { PERSONAL_INFO } from "@/lib/constants";
 import DiscordIcon from "@/components/ui/DiscordIcon";
+import LinktreeIcon from "@/components/ui/LinktreeIcon";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { getCopy, translateDynamicText } from "@/lib/i18n/translations";
 
@@ -89,6 +90,7 @@ const socialLinks = [
   { icon: Facebook, href: PERSONAL_INFO.facebookUrl, label: "Facebook" },
   { icon: Instagram, href: PERSONAL_INFO.instagramUrl, label: "Instagram" },
   { icon: DiscordIcon, href: PERSONAL_INFO.discordUrl, label: "Discord" },
+  { icon: LinktreeIcon, href: PERSONAL_INFO.linktreeUrl, label: "Linktree" },
   { icon: Code2, href: PERSONAL_INFO.codeforcesUrl, label: "Codeforces" },
   { icon: Code2, href: PERSONAL_INFO.leetcodeUrl, label: "LeetCode" },
 ];

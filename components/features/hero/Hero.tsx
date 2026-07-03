@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import { PERSONAL_INFO } from "@/lib/constants";
 import DiscordIcon from "@/components/ui/DiscordIcon";
+import LinktreeIcon from "@/components/ui/LinktreeIcon";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { getCopy } from "@/lib/i18n/translations";
 
@@ -108,6 +109,7 @@ export default function Hero() {
     { icon: Facebook, href: PERSONAL_INFO.facebookUrl, label: "Facebook" },
     { icon: Instagram, href: PERSONAL_INFO.instagramUrl, label: "Instagram" },
     { icon: DiscordIcon, href: PERSONAL_INFO.discordUrl, label: "Discord" },
+    { icon: LinktreeIcon, href: PERSONAL_INFO.linktreeUrl, label: "Linktree" },
   ];
 
   return (
