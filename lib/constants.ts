@@ -34,13 +34,13 @@ export type AboutCardLayoutKey = "default" | "feature";
 
 export type AboutCardContent =
   | {
-      kind: "paragraph";
-      text: string;
-    }
+    kind: "paragraph";
+    text: string;
+  }
   | {
-      kind: "list";
-      items: string[];
-    };
+    kind: "list";
+    items: string[];
+  };
 
 export interface AboutCard {
   id: string;
@@ -507,19 +507,19 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "certification",
     viewType: "link",
   },
-  /*
+
   {
-    title: "Foundational C# with Microsoft Certification",
-    organization: "freeCodeCamp",
-    date: "2024",
+    title: "Master Git and Github - Beginner to Expert",
+    organization: "Udemy",
+    date: "2026",
     description:
-      "Completed the Foundational C# certification program in collaboration with Microsoft",
-    link: "https://www.freecodecamp.org/certification/SnoOpWo0t/foundational-c-sharp-with-microsoft",
-    certificateImage: null,
+      "Completed the Master Git and Github - Beginner to Expert",
+    link: "https://www.udemy.com/certificate/UC-8e847161-8019-4b28-8b4d-73e80c7ab2bc/",
+    certificateImage: "/certificates/udemy git & github.jpg",
     type: "certification",
     viewType: "link",
   },
-  */
+
   {
     title: "Machine Learning Training Program",
     organization: "Department of CSE, University of Asia Pacific",
