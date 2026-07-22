@@ -435,7 +435,7 @@ export const ACHIEVEMENTS: Achievement[] = [
 
   */
   {
-    title: "Dean's Awards (2x) & Vice Chancellor Award (1x)",
+    title: "Dean's Awards (3x) & Vice Chancellor Award (1x)",
     organization: "University of Asia Pacific",
     date: "2022-2025",
     description:
@@ -477,7 +477,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
 
   {
-    title: "Codeforces Specialist (Max Rating: 1438)",
+    title: "Codeforces Specialist (Max Rating)",
     organization: "Codeforces",
     date: "Ongoing",
     description:
@@ -489,11 +489,11 @@ export const ACHIEVEMENTS: Achievement[] = [
     featured: true,
   },
   {
-    title: "CodeChef 3 Stars (Max Rating: 1635)",
+    title: "CodeChef  (Max Rating)",
     organization: "CodeChef",
     date: "Ongoing",
     description:
-      "Achieved 3-star rating on CodeChef competitive programming platform",
+      "CodeChef competitive programming platform",
     link: "https://www.codechef.com/users/SnoOpWo0t",
     certificateImage: null,
     type: "rating",
@@ -532,28 +532,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "training",
     viewType: "image",
   },
-  {
-    title: "EEE TECH FEST 2.0 Programming Contest",
-    organization: "University of Asia Pacific",
-    date: "June 3, 2024",
-    description:
-      "Participated in EEE TECH FEST 2.0 Intra University Programming Contest",
-    link: null,
-    certificateImage: "",
-    type: "competition",
-    viewType: "image",
-  },
-  {
-    title: "EEE TECH FEST 2023 Intra University Programming Contest",
-    organization: "University of Asia Pacific",
-    date: "March 29, 2023",
-    description:
-      "Participated in EEE TECH FEST 2023 Intra University Programming Contest",
-    link: null,
-    certificateImage: "",
-    type: "competition",
-    viewType: "image",
-  },
+
   /*
   {
     title: "5th Place, Inter Department Math Olympiad 3.0 & 4.0",
@@ -590,19 +569,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     type: "volunteer",
     viewType: "image",
   },
-  /*
-  {
-    title: "Volunteer - Prize Giving Ceremony for WMTC Winners",
-    organization: "World Mathematics Team Championship",
-    date: "February 8, 2025",
-    description:
-      "Coordinated prize distribution for World Mathematics Team Championship winners",
-    link: null,
-    certificateImage: "/certificates/wmtc-volunteer-2025.jpg",
-    type: "volunteer",
-    viewType: "image",
-  },
-  */
+
 ];
 
 export const EXPERIENCE = [
@@ -682,22 +649,7 @@ export const ORGANIZING_VOLUNTEERING = [
       "Organized Inter University programming contest bringing together students from multiple private universities",
     category: "organizer",
   },
-  {
-    title: "Organizer at the Intra University Math Fest 3.0",
-    date: "May 6, 2025",
-    organization: "University of Asia Pacific",
-    description:
-      "Organized third edition of math olympiad fostering problem-solving culture",
-    category: "organizer",
-  },
-  {
-    title: "Organizer at the Intra University Math Fest 2.0",
-    date: "October 28, 2024",
-    organization: "University of Asia Pacific",
-    description:
-      "Organized second edition of university math olympiad with increased participation",
-    category: "organizer",
-  },
+
   {
     title: "Organizer at the JRC Memorial 1st Intra University Math Fest 2023",
     date: "March 28, 2023",
@@ -714,14 +666,7 @@ export const ORGANIZING_VOLUNTEERING = [
       "Coordinated prize distribution for World Mathematics Team Championship winners",
     category: "volunteer",
   },
-  {
-    title: "Volunteer at the 11th Convocation of University of Asia Pacific",
-    date: "July 26, 2025",
-    organization: "University of Asia Pacific",
-    description:
-      "Assisted in organizing and coordinating the university's convocation ceremony",
-    category: "volunteer",
-  },
+
   {
     title:
       "Volunteer at the National IT Competition for Youth with Disabilities 2025",
