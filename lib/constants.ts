@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   phone: "+880 1757499561",
   university: "University of Asia Pacific",
   degree: "BSc (Eng.) in Computer Science and Engineering",
-  cgpa: "3.51 / 4.00",
+  cgpa: "3.55 / 4.00",
   graduation: "Expected 2026",
   codeforcesHandle: "SnoOpWo0t",
   leetcodeHandle: "SnoOpWo0t",
@@ -78,7 +78,7 @@ export const ABOUT_CARDS: AboutCard[] = [
       items: [
         PERSONAL_INFO.degree,
         PERSONAL_INFO.university,
-        `CGPA ${PERSONAL_INFO.cgpa} - 7th Semester`,
+        `CGPA ${PERSONAL_INFO.cgpa} -`,
       ],
     },
   },
