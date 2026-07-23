@@ -589,8 +589,8 @@ export const EXPERIENCE = [
     startDate: "July 2022",
     endDate: "July 2026 (Expected)",
     description: [
-      "CGPA: 3.51 / 4.00 (after 7 semesters)",
-      "Received 1 Vice Chancellor Award and 2 Dean's Awards",
+      "CGPA: 3.55 / 4.00 ",
+      "Received 1 Vice Chancellor Award and 3 Dean's Awards",
       "Focus areas: Software Engineering, Web Development, AI/ML, Data Structures & Algorithms",
     ],
     type: "education",
