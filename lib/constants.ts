@@ -448,7 +448,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description:
       "Participated in the first Inter University Collaborative Programming Contest at UAP",
     link: null,
-    certificateImage: "",
+    certificateImage: "/UAP Inter University Collaborative Programming Contest 1.0.jpeg",
     type: "competition",
     viewType: "image",
   },
