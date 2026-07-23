@@ -33,9 +33,9 @@
   --color-ctp-peach: #fab387;
   --color-ctp-yellow: #f9e2af;
   --color-ctp-green: #a6e3a1;
-  --color-ctp-blue: #94e2d5;
-  --color-ctp-mauve: #89dceb;
-  --color-ctp-pink: #74c7ec;
+  --color-ctp-teal: #94e2d5;
+  --color-ctp-sky: #89dceb;
+  --color-ctp-sapphire: #74c7ec;
   --color-ctp-blue: #89b4fa;
   --color-ctp-lavender: #b4befe;
 
@@ -70,9 +70,9 @@
   --color-ctp-peach: #fe640b;
   --color-ctp-yellow: #df8e1d;
   --color-ctp-green: #40a02b;
-  --color-ctp-blue: #179299;
-  --color-ctp-mauve: #04a5e5;
-  --color-ctp-pink: #209fb5;
+  --color-ctp-teal: #179299;
+  --color-ctp-sky: #04a5e5;
+  --color-ctp-sapphire: #209fb5;
   --color-ctp-blue: #1e66f5;
   --color-ctp-lavender: #7287fd;
 }
@@ -358,26 +358,4 @@ html.locale-bn body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(137, 180, 250, 0.5);
-}
-
-/* Premium Enhancements */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
-}
-
-.profile-conic-glow {
-  background: conic-gradient(from 0deg, #89b4fa, #cba6f7, #f5c2e7, #cba6f7, #89b4fa);
-}
-
-.text-glow-premium {
-  text-shadow: 0 0 12px rgba(245, 194, 231, 0.25);
 }

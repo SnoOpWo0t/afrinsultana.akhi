@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -85,6 +85,31 @@ export default function Hero() {
   const copy = getCopy(locale);
   const reduceVisualEffects = Boolean(prefersReducedMotion) || isMobile;
 
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceVisualEffects) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     const updateMobileState = () => setIsMobile(mediaQuery.matches);
@@ -149,8 +174,13 @@ export default function Hero() {
                 />
               )}
 
-              <div className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-sm">
-                <div className="relative h-full w-full overflow-hidden rounded-full border border-ctp-surface0/80">
+              <motion.div 
+                className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(137,180,250,0.15)] backdrop-blur-sm"
+                style={{ rotateX, rotateY, transformPerspective: 1000 }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="relative z-10 h-full w-full overflow-hidden rounded-full border border-ctp-surface0/80">
                   <Image
                     src="/profile.jpg"
                     alt={
@@ -163,7 +193,7 @@ export default function Hero() {
                     priority
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -171,7 +201,7 @@ export default function Hero() {
           <div className="order-2 space-y-6 text-center lg:order-1 lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-ctp-surface0/80 bg-ctp-surface0/35 px-4 py-2 text-sm backdrop-blur-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-ctp-surface1/80 bg-ctp-surface0/35 px-4 py-2 text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_14px_rgba(0,0,0,0.2)] transition-all hover:bg-ctp-surface0/60 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_0_20px_rgba(137,180,250,0.25)]"
             >
               <span className="font-mono text-ctp-blue">{copy.hero.hello}</span>
             </motion.div>
@@ -239,9 +269,9 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.97 }}
                 transition={springTransition}
-                className="group relative overflow-hidden rounded-xl bg-ctp-blue px-6 py-2.5 font-body font-semibold text-ctp-crust transition-colors hover:bg-ctp-sapphire"
+                className="group relative overflow-hidden rounded-xl bg-ctp-blue px-6 py-2.5 font-body font-semibold text-ctp-crust transition-all duration-300 hover:bg-ctp-pink shadow-[0_0_24px_rgba(137,180,250,0.35)] hover:shadow-[0_0_36px_rgba(245,194,231,0.5)]"
               >
-                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-ctp-surface0/35 to-transparent transition-transform duration-600 group-hover:translate-x-full" />
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-ctp-surface0/40 to-transparent transition-transform duration-600 group-hover:translate-x-full" />
                 <span className="relative z-10 flex items-center gap-2">
                   {copy.hero.viewWork}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

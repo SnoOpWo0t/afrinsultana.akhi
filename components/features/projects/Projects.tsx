@@ -604,7 +604,7 @@ export default function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/live flex flex-1 items-center justify-center gap-2 rounded-lg bg-ctp-blue px-3 py-2 text-sm font-medium text-ctp-crust transition-colors hover:bg-ctp-sapphire focus-visible:ring-2 focus-visible:ring-ctp-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
+                      className="group/live flex flex-1 items-center justify-center gap-2 rounded-lg bg-ctp-blue px-3 py-2 text-sm font-medium text-ctp-crust transition-colors hover:bg-ctp-pink focus-visible:ring-2 focus-visible:ring-ctp-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
                     >
                       <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover/live:-translate-y-0.5 group-hover/live:scale-105" />
                       {copy.projects.live}

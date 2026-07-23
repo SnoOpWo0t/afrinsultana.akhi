@@ -91,20 +91,20 @@ const getTypeStyles = (
     },
     certification: {
       icon: BadgeCheck,
-      color: "text-ctp-teal",
+      color: "text-ctp-blue",
       hexColor: "#81c8be",
-      bg: "bg-ctp-teal/10",
-      accent: "bg-ctp-teal/70",
-      glow: "bg-ctp-teal/15",
+      bg: "bg-ctp-blue/10",
+      accent: "bg-ctp-blue/70",
+      glow: "bg-ctp-blue/15",
       label: copy.achievements.certification,
     },
     training: {
       icon: BookOpen,
-      color: "text-ctp-sapphire",
+      color: "text-ctp-pink",
       hexColor: "#85c1dc",
-      bg: "bg-ctp-sapphire/10",
-      accent: "bg-ctp-sapphire/70",
-      glow: "bg-ctp-sapphire/15",
+      bg: "bg-ctp-pink/10",
+      accent: "bg-ctp-pink/70",
+      glow: "bg-ctp-pink/15",
       label: copy.achievements.training,
     },
     volunteer: {
@@ -294,7 +294,7 @@ function AchievementCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-1 text-xs text-ctp-blue transition-colors hover:text-ctp-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base rounded bg-ctp-surface0/50 px-2 py-1"
+                className="inline-flex items-center gap-1 text-xs text-ctp-blue transition-colors hover:text-ctp-pink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base rounded bg-ctp-surface0/50 px-2 py-1"
               >
                 {copy.achievements.view}
                 <ExternalLink className="h-3 w-3" />
@@ -307,7 +307,7 @@ function AchievementCard({
                   e.stopPropagation();
                   onOpenCertificate(achievement);
                 }}
-                className="inline-flex items-center gap-1 text-xs text-ctp-blue transition-colors hover:text-ctp-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base rounded bg-ctp-surface0/50 px-2 py-1"
+                className="inline-flex items-center gap-1 text-xs text-ctp-blue transition-colors hover:text-ctp-pink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base rounded bg-ctp-surface0/50 px-2 py-1"
                 aria-label={`${copy.achievements.viewCertificateFor} ${achievement.title}`}
               >
                 {copy.achievements.certificate}

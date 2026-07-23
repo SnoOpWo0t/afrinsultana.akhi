@@ -111,7 +111,7 @@ export default function Header() {
           <nav className="isolate flex items-center gap-1 rounded-[999px] bg-ctp-base/55 px-2 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-2xl">
             <a
               href="#hero"
-              className="rounded-full px-3 py-1.5 text-sm font-display font-bold text-ctp-blue transition-colors hover:text-ctp-sapphire"
+              className="rounded-full px-3 py-1.5 text-sm font-display font-bold text-ctp-blue transition-colors hover:text-ctp-pink"
             >
               SnoOpWo0t
             </a>

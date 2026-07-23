@@ -382,7 +382,7 @@ export default function Contact() {
               disabled={status === "loading"}
               whileTap={reducedMotion ? undefined : { scale: 0.985 }}
               transition={{ duration: 0.15, ease }}
-              className="w-full px-6 py-2.5 bg-ctp-blue hover:bg-ctp-sapphire text-ctp-crust font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-2.5 bg-ctp-blue hover:bg-ctp-pink text-ctp-crust font-semibold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-busy={status === "loading"}
             >
               {status === "loading" ? (

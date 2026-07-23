@@ -233,7 +233,7 @@ export default function FloatingStats() {
                         href={PERSONAL_INFO.codeforcesUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-ctp-blue hover:text-ctp-sapphire transition-colors flex items-center gap-1"
+                        className="text-xs text-ctp-blue hover:text-ctp-pink transition-colors flex items-center gap-1"
                       >
                         {copy.stats.profile}{" "}
                         <ExternalLink className="w-3 h-3" />
@@ -284,7 +284,7 @@ export default function FloatingStats() {
                         href={PERSONAL_INFO.leetcodeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-ctp-blue hover:text-ctp-sapphire transition-colors flex items-center gap-1"
+                        className="text-xs text-ctp-blue hover:text-ctp-pink transition-colors flex items-center gap-1"
                       >
                         {copy.stats.profile}{" "}
                         <ExternalLink className="w-3 h-3" />
