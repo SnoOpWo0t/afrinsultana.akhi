@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence, type Variants } from "framer-motion";
 import {
   Github,
   ExternalLink,
@@ -12,6 +12,9 @@ import {
   Layers,
   CircleDot,
   ArrowUpRight,
+  X,
+  ChevronLeft,
+  ChevronRight,
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -162,6 +165,130 @@ const getCardLayout = (project: ProjectItem, index: number) => {
   };
 };
 
+
+const ProjectModal = ({ project, onClose }: { project: ProjectItem | null, onClose: () => void }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight' && project?.images) {
+        setCurrentIndex((prev) => (prev + 1) % project.images!.length);
+      }
+      if (e.key === 'ArrowLeft' && project?.images) {
+        setCurrentIndex((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [project, onClose]);
+
+  // Reset index when project changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [project]);
+
+  return (
+    <AnimatePresence>
+      {project && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ctp-crust/80 backdrop-blur-sm p-4 sm:p-8"
+        >
+          <button
+            onClick={onClose}
+            className="absolute top-6 right-6 z-[110] rounded-full bg-ctp-surface0/50 p-2 text-ctp-text hover:bg-ctp-surface1 backdrop-blur-md transition-colors"
+          >
+            <X className="h-6 w-6" />
+          </button>
+          <motion.div
+            layoutId={`project-media-${project.title}`}
+            className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden bg-ctp-mantle shadow-2xl ring-1 ring-ctp-surface1"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {project.images && project.images.length > 0 ? (
+              <>
+                <AnimatePresence mode="popLayout" initial={false}>
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -50 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={project.images[currentIndex]}
+                      alt={`${project.title} screenshot ${currentIndex + 1}`}
+                      fill
+                      className="object-contain bg-black/20"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {project.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+                      }}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-[110] rounded-full bg-ctp-surface0/50 p-3 text-ctp-text hover:bg-ctp-surface1 backdrop-blur-md transition-colors"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev + 1) % project.images!.length);
+                      }}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-[110] rounded-full bg-ctp-surface0/50 p-3 text-ctp-text hover:bg-ctp-surface1 backdrop-blur-md transition-colors"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-[110]">
+                      {project.images.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentIndex(i);
+                          }}
+                          className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                            i === currentIndex ? "bg-ctp-blue" : "bg-ctp-surface1 hover:bg-ctp-surface2"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            ) : project.video ? (
+              <video
+                src={project.video}
+                autoPlay
+                controls
+                className="w-full h-full object-contain bg-black/20"
+              />
+            ) : project.image ? (
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-contain bg-black/20"
+              />
+            ) : null}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 export default function Projects() {
   const prefersReducedMotion = useReducedMotion();
   const reducedMotion = Boolean(prefersReducedMotion);
@@ -170,6 +297,7 @@ export default function Projects() {
   const filterConfig = getFilterConfig(locale);
   const statusConfig = getStatusConfig(locale);
   const [filter, setFilter] = useState<"all" | "featured">("featured");
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [projectStats, setProjectStats] = useState<
     Record<string, ProjectStats>
   >(() =>
@@ -296,10 +424,35 @@ export default function Projects() {
               />
 
               {/* Image */}
-              <div
-                className={`relative overflow-hidden bg-ctp-mantle ${layout.imageClass}`}
+              <motion.div
+                layoutId={`project-media-${project.title}`}
+                onClick={() => setSelectedProject(project)}
+                className={`relative overflow-hidden bg-ctp-mantle cursor-pointer ${layout.imageClass}`}
               >
-                {project.image ? (
+                {project.video ? (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                      className={`object-cover transition-opacity duration-500 absolute inset-0 z-10 ${
+                        reducedMotion ? "" : "group-hover:opacity-0"
+                      }`}
+                    />
+                    <video
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className={`object-cover w-full h-full transition-opacity duration-500 absolute inset-0 opacity-0 z-0 ${
+                        reducedMotion ? "" : "group-hover:opacity-100"
+                      }`}
+                    />
+                  </>
+                ) : project.image ? (
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -343,7 +496,7 @@ export default function Projects() {
                     {translateDynamicText(locale, project.highlight)}
                   </span>
                 )}
-              </div>
+              </motion.div>
 
               {/* Body */}
               <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -361,7 +514,7 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <h3 className="mb-2 text-lg font-display font-bold text-ctp-text transition-colors group-hover:text-ctp-blue sm:text-[1.2rem]">
+                <h3 className="mb-2 text-lg font-display font-bold text-ctp-text transition-colors group-hover:text-ctp-blue sm:text-[1.2rem] cursor-pointer" onClick={() => setSelectedProject(project)}>
                   {project.title}
                   <span className="mt-1 block h-px origin-left scale-x-0 bg-linear-to-r from-ctp-blue via-ctp-mauve to-ctp-pink transition-transform duration-300 group-hover:scale-x-100" />
                 </h3>
@@ -482,6 +635,10 @@ export default function Projects() {
           <ArrowUpRight className="h-4 w-4" />
         </a>
       </motion.div>
+
+      {/* Shared Element Modal */}
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </Section>
+
   );
 }

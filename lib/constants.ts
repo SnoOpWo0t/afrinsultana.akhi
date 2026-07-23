@@ -194,6 +194,8 @@ export interface Project {
   featured: boolean;
   wide?: boolean;
   image: string;
+  images?: string[];
+  video?: string;
   category: string;
   extensionId?: string;
   status?: ProjectStatusKey;
@@ -241,6 +243,28 @@ export const SKILL_LOGOS: SkillLogo[] = [
 export const PROJECTS: Project[] = [
   {
     title: "Horizon",
+    images: [
+      "/Horizon Planner Screenshot/active event.png",
+      "/Horizon Planner Screenshot/admin dasshboard.png",
+      "/Horizon Planner Screenshot/all venue.png",
+      "/Horizon Planner Screenshot/checkout.png",
+      "/Horizon Planner Screenshot/event details.png",
+      "/Horizon Planner Screenshot/home dark.png",
+      "/Horizon Planner Screenshot/home.png",
+      "/Horizon Planner Screenshot/hoorizoon panner dashboard.png",
+      "/Horizon Planner Screenshot/profile.png",
+      "/Horizon Planner Screenshot/revenue moderation.png",
+      "/Horizon Planner Screenshot/revenue.png",
+      "/Horizon Planner Screenshot/role upgrade requesst.png",
+      "/Horizon Planner Screenshot/role upgrade.png",
+      "/Horizon Planner Screenshot/Screenshot 2026-07-23 113536.png",
+      "/Horizon Planner Screenshot/Sidebar.png",
+      "/Horizon Planner Screenshot/ticket booking.png",
+      "/Horizon Planner Screenshot/Ticket.png",
+      "/Horizon Planner Screenshot/vent showcase.png",
+      "/Horizon Planner Screenshot/Venue Details.png",
+      "/Horizon Planner Screenshot/venue showcase.png"
+    ],
     description:
       "Django-based event management website designed to organize, showcase, and book events efficiently. It allows organizers to create and manage events such as conferences, concerts, workshops, and weddings, while users can easily explore and book events online.",
     techStack: ["Django", "Python", "HTML", "CSS", "SQL"],
@@ -266,6 +290,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://root-reach.vercel.app/",
     featured: true,
     image: "/projects/rootreach.png",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
     category: "Web Development",
     status: "stable",
     tags: ["E-commerce", "Admin"],
@@ -372,21 +397,7 @@ export interface Achievement {
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
-  /* 
-  {
-    title: "ICPC Dhaka Regionalist 2024",
-    organization: "ICPC",
-    date: "November 2024",
-    description:
-      "Competed in the prestigious ICPC Asia West Continent Dhaka Regional Contest",
-    link: null,
-    certificateImage: "/certificates/icpc-dhaka-2024.jpg",
-    type: "competition",
-    viewType: "image",
-    featured: true,
-  },
 
- */
   {
     title: "KUET BITFEST 2025",
     organization: "Khulna University of Engineering & Technology",
@@ -451,19 +462,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
     featured: true,
   },
-  /* 
-  {
-    title: "Champion, Ekushey Intra Department Programming Contest 2023",
-    organization: "University of Asia Pacific",
-    date: "February 2023",
-    description: "Won first place in the Intra Department Programming Contest",
-    link: null,
-    certificateImage: "/certificates/ekushey-2023.jpg",
-    type: "competition",
-    viewType: "image",
-    featured: true,
-  },
-  */
+
   {
     title: "Master Git and Github - Beginner to Expert",
     organization: "Udemy",
@@ -533,19 +532,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     viewType: "image",
   },
 
-  /*
-  {
-    title: "5th Place, Inter Department Math Olympiad 3.0 & 4.0",
-    organization: "University of Asia Pacific",
-    date: "2023, 2024",
-    description:
-      "Secured 5th position in university math olympiad for two consecutive years",
-    link: null,
-    certificateImage: "/certificates/math-olympiad.jpg",
-    type: "competition",
-    viewType: "image",
-  },
-  */
+
   {
     title: "Volunteer - 11th Convocation of University of Asia Pacific",
     organization: "University of Asia Pacific",
