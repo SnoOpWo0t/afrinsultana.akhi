@@ -154,7 +154,7 @@ const getMetaVariants = (reducedMotion: boolean): Variants => ({
 
 const getCardLayout = (project: ProjectItem, index: number) => {
   const prominent = Boolean(
-    project.featured && (project.wide ?? index % 3 === 0),
+    project.featured && (project.wide ?? (index % 4 === 0 || index % 4 === 3)),
   );
 
   return {

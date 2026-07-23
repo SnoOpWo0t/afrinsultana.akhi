@@ -14,7 +14,7 @@ export const PERSONAL_INFO = {
   leetcodeHandle: "SnoOpWo0t",
   codechefHandle: "SnoOpWo0t",
   githubUrl: "https://github.com/SnoOpWo0t",
-  linkedinUrl: "https://www.linkedin.com/in/afrin-sultana-akhi-7b371b192/",
+  linkedinUrl: "https://www.linkedin.com/in/afrin-sultana-akhi-1ab3a4422/",
   twitterUrl: "https://x.com/AfrinSultanaAkh",
   facebookUrl: "https://www.facebook.com/afrin.sultana.akhi01",
   instagramUrl: "https://instagram.com/afrinsultana.akhi_",
@@ -242,6 +242,29 @@ export const SKILL_LOGOS: SkillLogo[] = [
 
 export const PROJECTS: Project[] = [
   {
+    title: "Snakhi.io",
+    images: [
+      "/Snakhi.io Screenshot/Achivement.png",
+      "/Snakhi.io Screenshot/Fullscreen.png",
+      "/Snakhi.io Screenshot/Map Skin.png",
+      "/Snakhi.io Screenshot/Skin.png",
+      "/Snakhi.io Screenshot/Statistic.png",
+      "/Snakhi.io Screenshot/gameplay (1).png",
+      "/Snakhi.io Screenshot/gameplay (2).png"
+    ],
+    description: "Classic Gameplay with a Modern Twist: Enjoy the timeless mechanics of Snake, enhanced with smooth grid-based movement and responsive controls. Features include a Dynamic Growth System, powerful Power-Ups (Magnet, Ghost Mode, Slow Motion, Double Score, Shield, Shrink), Fire Element Combos, Shop & Customization, Achievements & Statistics, and a highly polished UI/UX.",
+    techStack: ["Godot 4", "GDScript"],
+    githubUrl: "https://github.com/SnoOpWo0t/Snakhi.io",
+    githubRepo: "SnoOpWo0t/Snakhi.io",
+    liveUrl: null,
+    featured: true,
+    image: "/projects/Snakhi-io.png",
+    category: "Game Development",
+    status: "stable",
+    tags: ["Game", "Godot 4", "Cross-Platform"],
+    highlight: "Godot 4 Engine",
+  },
+  {
     title: "Horizon",
     images: [
       "/Horizon Planner Screenshot/active event.png",
@@ -272,7 +295,6 @@ export const PROJECTS: Project[] = [
     githubRepo: "SnoOpWo0t/Horizon-Planners",
     liveUrl: "https://horizon-planners.vercel.app/",
     featured: true,
-    wide: true,
     image: "/projects/horizon.png",
     category: "Web Development",
     status: "active",

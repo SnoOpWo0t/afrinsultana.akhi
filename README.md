@@ -85,7 +85,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🤝 Let's Connect
 
 <div align="center">
-  <a href="https://linkedin.com/in/afrin-sultana-akhi-7b371b192/">
+  <a href="https://www.linkedin.com/in/afrin-sultana-akhi-1ab3a4422/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://github.com/SnoOpWo0t">
