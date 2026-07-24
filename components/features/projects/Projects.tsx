@@ -225,6 +225,7 @@ const ProjectModal = ({ project, onClose }: { project: ProjectItem | null, onClo
                       src={project.images[currentIndex]}
                       alt={`${project.title} screenshot ${currentIndex + 1}`}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 1024px"
                       className="object-contain bg-black/20"
                     />
                   </motion.div>
@@ -291,7 +292,9 @@ const ProjectModal = ({ project, onClose }: { project: ProjectItem | null, onClo
 
 export default function Projects() {
   const prefersReducedMotion = useReducedMotion();
-  const reducedMotion = Boolean(prefersReducedMotion);
+  const [isMobile, setIsMobile] = useState(false);
+  const reduceVisualEffects = Boolean(prefersReducedMotion) || isMobile;
+
   const { locale } = useLanguage();
   const copy = getCopy(locale);
   const filterConfig = getFilterConfig(locale);
@@ -312,9 +315,9 @@ export default function Projects() {
   const formatNumber = (value: number) =>
     locale === "bn" ? value.toLocaleString("bn-BD") : value.toLocaleString();
 
-  const gridVariants = getGridVariants(reducedMotion);
-  const cardVariants = getCardVariants(reducedMotion);
-  const metaVariants = getMetaVariants(reducedMotion);
+  const gridVariants = getGridVariants(reduceVisualEffects);
+  const cardVariants = getCardVariants(reduceVisualEffects);
+  const metaVariants = getMetaVariants(reduceVisualEffects);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -343,6 +346,18 @@ export default function Projects() {
     void fetchStats();
 
     return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateMobileState = () => setIsMobile(mediaQuery.matches);
+
+    updateMobileState();
+    mediaQuery.addEventListener("change", updateMobileState);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMobileState);
+    };
   }, []);
 
   return (
@@ -403,7 +418,7 @@ export default function Projects() {
               key={project.title}
               variants={cardVariants}
               whileHover={
-                reducedMotion
+                reduceVisualEffects
                   ? undefined
                   : {
                       y: -4,
@@ -412,14 +427,14 @@ export default function Projects() {
                       rotateY: layout.prominent ? -1.1 : -0.8,
                     }
               }
-              transition={{ duration: reducedMotion ? 0.22 : 0.26, ease }}
+              transition={{ duration: reduceVisualEffects ? 0.22 : 0.26, ease }}
               style={{ transformPerspective: 1200 }}
               className={`group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-ctp-surface0/70 bg-ctp-surface0/35 backdrop-blur-sm transition-[border-color,background-color] duration-300 hover:border-ctp-surface1 hover:bg-ctp-surface0/45 ${layout.spanClass}`}
             >
               <div className={`absolute inset-x-0 top-0 h-px ${status.rail}`} />
               <div
                 className={`pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full ${status.glow} opacity-0 blur-3xl transition-opacity duration-300 ${
-                  reducedMotion ? "" : "group-hover:opacity-100"
+                  reduceVisualEffects ? "" : "group-hover:opacity-100"
                 }`}
               />
 
@@ -436,21 +451,21 @@ export default function Projects() {
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      loading="lazy"
+                      priority={index < 2}
                       className={`object-cover transition-opacity duration-500 absolute inset-0 z-10 ${
-                        reducedMotion ? "" : "group-hover:opacity-0"
+                        reduceVisualEffects ? "" : "group-hover:opacity-0"
                       }`}
                     />
-                    <video
-                      src={project.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className={`object-cover w-full h-full transition-opacity duration-500 absolute inset-0 opacity-0 z-0 ${
-                        reducedMotion ? "" : "group-hover:opacity-100"
-                      }`}
-                    />
+                    {!reduceVisualEffects && (
+                      <video
+                        src={project.video}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="object-cover w-full h-full transition-opacity duration-500 absolute inset-0 opacity-0 z-0 group-hover:opacity-100"
+                      />
+                    )}
                   </>
                 ) : project.image ? (
                   <Image
@@ -458,9 +473,9 @@ export default function Projects() {
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    loading="lazy"
+                    priority={index < 2}
                     className={`object-cover transition-transform duration-500 ${
-                      reducedMotion
+                      reduceVisualEffects
                         ? ""
                         : "group-hover:scale-105 group-hover:-translate-y-0.5"
                     }`}
@@ -471,7 +486,7 @@ export default function Projects() {
                       src={project.liveUrl}
                       title={`${project.title} preview`}
                       className={`w-full h-full border-0 pointer-events-none transition-transform duration-500 ${
-                        reducedMotion
+                        reduceVisualEffects
                           ? ""
                           : "group-hover:scale-105 group-hover:-translate-y-0.5"
                       }`}

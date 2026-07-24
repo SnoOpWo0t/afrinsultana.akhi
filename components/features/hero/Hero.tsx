@@ -189,6 +189,7 @@ export default function Hero() {
                         : PERSONAL_INFO.name
                     }
                     fill
+                    sizes="(max-width: 768px) 70vw, 400px"
                     className="object-cover object-top"
                     priority
                   />
