@@ -202,8 +202,12 @@ export default function Hero() {
           <div className="order-2 space-y-6 text-center lg:order-1 lg:text-left">
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-ctp-surface1/80 bg-ctp-surface0/35 px-4 py-2 text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_14px_rgba(0,0,0,0.2)] transition-all hover:bg-ctp-surface0/60 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_0_20px_rgba(137,180,250,0.25)]"
+              className="inline-flex items-center gap-2.5 rounded-full border border-ctp-surface1/80 bg-ctp-surface0/35 px-4 py-2 text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_14px_rgba(0,0,0,0.2)] transition-all hover:bg-ctp-surface0/60 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_0_24px_rgba(245,194,231,0.65)]"
             >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ctp-green opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-ctp-green"></span>
+              </span>
               <span className="font-mono text-ctp-blue">{copy.hero.hello}</span>
             </motion.div>
 
