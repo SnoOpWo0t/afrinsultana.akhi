@@ -110,6 +110,31 @@ export default function Hero() {
     y.set(0);
   };
 
+  const badgeX = useMotionValue(0);
+  const badgeY = useMotionValue(0);
+  const badgeMouseXSpring = useSpring(badgeX, { stiffness: 800, damping: 15 });
+  const badgeMouseYSpring = useSpring(badgeY, { stiffness: 800, damping: 15 });
+  const badgeRotateX = useTransform(badgeMouseYSpring, [-0.5, 0.5], ["25deg", "-25deg"]);
+  const badgeRotateY = useTransform(badgeMouseXSpring, [-0.5, 0.5], ["-25deg", "25deg"]);
+
+  const handleBadgeMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceVisualEffects) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    badgeX.set(xPct);
+    badgeY.set(yPct);
+  };
+
+  const handleBadgeMouseLeave = () => {
+    badgeX.set(0);
+    badgeY.set(0);
+  };
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
     const updateMobileState = () => setIsMobile(mediaQuery.matches);
@@ -163,19 +188,25 @@ export default function Hero() {
             whileHover={reduceVisualEffects ? undefined : { y: -4, scale: 1.015 }}
             transition={springTransition}
           >
-            <div className="relative w-[min(66vw,16rem)] sm:w-80 md:w-96 lg:w-100">
+            <div className="relative w-[min(66vw,16rem)] sm:w-80 md:w-96 lg:w-100 group">
               {reduceVisualEffects ? (
-                <div className="absolute -inset-6 rounded-[2.5rem] bg-ctp-blue/10 blur-2xl" />
+                <>
+                  <div className="absolute -inset-6 rounded-[2.5rem] bg-ctp-blue/10 blur-2xl transition-opacity duration-700 group-hover:opacity-0" />
+                  <div className="absolute -inset-6 rounded-[2.5rem] bg-linear-to-tr from-ctp-blue/15 to-ctp-mauve/15 blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                </>
               ) : (
                 <motion.div
-                  className="absolute -inset-6 rounded-[2.5rem] bg-ctp-blue/10 blur-2xl"
+                  className="absolute -inset-6 rounded-[2.5rem] blur-2xl"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 4, repeat: Infinity, ease }}
-                />
+                >
+                  <div className="absolute inset-0 rounded-[2.5rem] bg-ctp-blue/10 transition-opacity duration-700 group-hover:opacity-0" />
+                  <div className="absolute inset-0 rounded-[2.5rem] bg-linear-to-tr from-ctp-blue/15 to-ctp-mauve/15 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                </motion.div>
               )}
 
               <motion.div 
-                className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(137,180,250,0.15)] backdrop-blur-sm"
+                className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(137,180,250,0.15)] transition-shadow duration-700 group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(198,160,246,0.25),inset_0_0_20px_rgba(198,160,246,0.15)] backdrop-blur-sm"
                 style={{ rotateX, rotateY, transformPerspective: 1000 }}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -202,6 +233,9 @@ export default function Hero() {
           <div className="order-2 space-y-6 text-center lg:order-1 lg:text-left">
             <motion.div
               variants={itemVariants}
+              style={reduceVisualEffects ? undefined : { rotateX: badgeRotateX, rotateY: badgeRotateY, transformPerspective: 1000 }}
+              onMouseMove={handleBadgeMouseMove}
+              onMouseLeave={handleBadgeMouseLeave}
               className="inline-flex items-center gap-2.5 rounded-full border border-ctp-surface1/80 bg-ctp-surface0/35 px-4 py-2 text-sm backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_4px_14px_rgba(0,0,0,0.2)] transition-all hover:bg-ctp-surface0/60 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_0_24px_rgba(245,194,231,0.65)]"
             >
               <span className="relative flex h-2.5 w-2.5">
