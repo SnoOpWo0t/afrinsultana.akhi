@@ -158,9 +158,6 @@ export default function Footer() {
                 </motion.a>
               </div>
 
-              <p className="text-center text-xs text-ctp-overlay0 sm:text-right">
-                {copy.footer.builtWith}
-              </p>
             </motion.div>
           </div>
         </motion.div>
