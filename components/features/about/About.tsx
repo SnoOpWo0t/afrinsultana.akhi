@@ -185,7 +185,7 @@ export default function About() {
                     }
               }
               transition={hoverTransition}
-              className={`group relative overflow-hidden rounded-2xl border border-ctp-surface0/70 bg-ctp-surface0/35 p-4 backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-300 hover:border-ctp-surface1 hover:bg-ctp-surface0/45 sm:p-5 ${getCardSpan(card.id, card.layout)}`}
+              className={`group relative overflow-hidden rounded-2xl border p-4 backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-300 glass-card sm:p-5 ${getCardSpan(card.id, card.layout)}`}
             >
               <div
                 className={`pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full ${tone.badge} opacity-0 blur-3xl transition-opacity duration-300 ${glowClasses}`}

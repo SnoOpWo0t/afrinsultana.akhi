@@ -429,7 +429,7 @@ export default function Projects() {
               }
               transition={{ duration: reduceVisualEffects ? 0.22 : 0.26, ease }}
               style={{ transformPerspective: 1200 }}
-              className={`group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-ctp-surface0/70 bg-ctp-surface0/35 backdrop-blur-sm transition-[border-color,background-color] duration-300 hover:border-ctp-surface1 hover:bg-ctp-surface0/45 ${layout.spanClass}`}
+              className={`group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-300 glass-card ${layout.spanClass}`}
             >
               <div className={`absolute inset-x-0 top-0 h-px ${status.rail}`} />
               <div

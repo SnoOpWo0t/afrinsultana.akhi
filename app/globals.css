@@ -35,9 +35,11 @@
   --color-ctp-green: #a6e3a1;
   --color-ctp-blue: #94e2d5;
   --color-ctp-mauve: #89dceb;
-  --color-ctp-pink: #74c7ec;
   --color-ctp-blue: #89b4fa;
   --color-ctp-lavender: #b4befe;
+
+  /* Shadows */
+  --color-shadow-strong: rgba(0, 0, 0, 0.5);
 
   /* Spacing */
   --spacing-section: 6rem;
@@ -71,10 +73,12 @@
   --color-ctp-yellow: #df8e1d;
   --color-ctp-green: #40a02b;
   --color-ctp-blue: #179299;
-  --color-ctp-mauve: #04a5e5;
   --color-ctp-pink: #209fb5;
   --color-ctp-blue: #1e66f5;
   --color-ctp-lavender: #7287fd;
+
+  /* Shadows */
+  --color-shadow-strong: rgba(17, 17, 27, 0.12);
 }
 
 .light body {
@@ -166,7 +170,7 @@ html.locale-bn body {
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #89b4fa 0%, #cba6f7 50%, #f5c2e7 100%);
+  background: linear-gradient(135deg, var(--color-ctp-blue) 0%, var(--color-ctp-mauve) 50%, var(--color-ctp-pink) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -210,6 +214,28 @@ html.locale-bn body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(69, 71, 90, 0.5);
+}
+
+/* Glass Card Component */
+.glass-card {
+  background-color: rgba(49, 50, 68, 0.35); /* ctp-surface0 at 35% */
+  border-color: rgba(49, 50, 68, 0.7);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.glass-card:hover {
+  background-color: rgba(49, 50, 68, 0.45);
+  border-color: var(--color-ctp-surface1);
+}
+
+.light .glass-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(188, 192, 204, 0.4);
+  box-shadow: 0 8px 32px -8px rgba(17, 17, 27, 0.04);
+}
+.light .glass-card:hover {
+  background-color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(188, 192, 204, 0.7);
+  box-shadow: 0 12px 40px -8px rgba(17, 17, 27, 0.08);
 }
 
 /* Custom Scrollbar */
@@ -334,7 +360,7 @@ html.locale-bn body {
 }
 
 .animate-text-gradient {
-  background: linear-gradient(90deg, #89b4fa, #cba6f7, #f5c2e7, #89b4fa);
+  background: linear-gradient(90deg, var(--color-ctp-blue), var(--color-ctp-mauve), var(--color-ctp-pink), var(--color-ctp-blue));
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

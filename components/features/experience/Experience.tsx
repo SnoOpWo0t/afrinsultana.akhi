@@ -235,7 +235,7 @@ export default function Experience() {
                   }
             }
             transition={{ duration: 0.25, ease }}
-            className="group relative overflow-hidden rounded-2xl border border-ctp-surface0/70 bg-ctp-surface0/35 p-6 sm:p-7 backdrop-blur-sm transition-[border-color,background-color] duration-300 hover:border-ctp-surface1 hover:bg-ctp-surface0/45"
+            className="group relative overflow-hidden rounded-2xl border p-6 sm:p-7 backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-300 glass-card"
           >
             <div
               className={`pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full ${featuredConfig.bg} opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100`}

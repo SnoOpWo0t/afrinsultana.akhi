@@ -206,7 +206,7 @@ export default function Hero() {
               )}
 
               <motion.div 
-                className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(137,180,250,0.15)] transition-shadow duration-700 group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.5),0_0_40px_rgba(198,160,246,0.25),inset_0_0_20px_rgba(198,160,246,0.15)] backdrop-blur-sm"
+                className="relative aspect-square overflow-hidden rounded-full border border-ctp-surface1/70 bg-ctp-mantle/70 p-2 shadow-[0_30px_70px_var(--color-shadow-strong),0_0_40px_rgba(137,180,250,0.15)] transition-shadow duration-700 group-hover:shadow-[0_30px_70px_var(--color-shadow-strong),0_0_40px_rgba(198,160,246,0.25),inset_0_0_20px_rgba(198,160,246,0.15)] backdrop-blur-sm"
                 style={{ rotateX, rotateY, transformPerspective: 1000 }}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
