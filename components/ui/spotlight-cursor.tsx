@@ -12,6 +12,8 @@ const useSpotlightEffect = (config: SpotlightConfig) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 

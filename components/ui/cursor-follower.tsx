@@ -15,6 +15,8 @@ export const Component = () => {
   const BORDER_DOT_SMOOTHNESS = 0.1;
 
   useEffect(() => {
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mousePosition.current = { x: e.clientX, y: e.clientY };
     };
