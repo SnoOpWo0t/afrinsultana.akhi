@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Monitor } from "lucide-react";
 import { navigation } from "@/components/shared/Header";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { PERSONAL_INFO } from "@/lib/constants";
@@ -158,6 +158,26 @@ export default function Footer() {
                 </motion.a>
               </div>
 
+              <div className="flex items-center justify-center sm:justify-end">
+                <motion.a
+                  href="https://konect.gg/editor/gears"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={
+                    reducedMotion
+                      ? undefined
+                      : {
+                          y: -2,
+                        }
+                  }
+                  transition={{ duration: 0.2, ease }}
+                  className="group flex items-center gap-2 rounded-lg border border-ctp-surface0/60 bg-ctp-surface0/30 px-3 py-2 text-sm text-ctp-subtext0 transition-colors hover:border-ctp-surface1 hover:text-ctp-text"
+                  aria-label="My PC Configuration"
+                >
+                  <Monitor className="h-4 w-4" />
+                  <span>PC Configuration</span>
+                </motion.a>
+              </div>
             </motion.div>
           </div>
         </motion.div>
