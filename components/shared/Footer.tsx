@@ -160,7 +160,7 @@ export default function Footer() {
 
               <div className="flex items-center justify-center sm:justify-end">
                 <motion.a
-                  href="https://konect.gg/editor/gears"
+                  href="https://konect.gg/akhi"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={
