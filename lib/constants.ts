@@ -148,21 +148,30 @@ export const ABOUT_CARDS: AboutCard[] = [
 
 export const SKILLS = {
   languages: [
+    { name: "HTML5", level: "Advanced", category: "Programming Language" },
+    { name: "GDScript", level: "Intermediate", category: "Programming Language" },
     { name: "C", level: "Advanced", category: "Programming Language" },
     { name: "C++", level: "Advanced", category: "Programming Language" },
     { name: "Python", level: "Intermediate", category: "Programming Language" },
+    { name: "PHP", level: "Intermediate", category: "Programming Language" },
     { name: "JavaScript", level: "Beginner", category: "Programming Language" },
     { name: "TypeScript", level: "Beginner", category: "Programming Language" },
   ],
   frameworks: [
+    { name: "Godot 4", level: "Intermediate", category: "Framework" },
+    { name: "Android SDK", level: "Intermediate", category: "Framework" },
     { name: "Next.js", level: "Intermediate", category: "Framework" },
     { name: "React", level: "Intermediate", category: "Framework" },
     { name: "Django", level: "Intermediate", category: "Framework" },
+    { name: "Laravel", level: "Intermediate", category: "Framework" },
+    { name: "Flutter", level: "Intermediate", category: "Framework" },
     { name: "Tailwind CSS", level: "Advanced", category: "Framework" },
   ],
   tools: [
+    { name: "2D Software", level: "Intermediate", category: "Tool" },
     { name: "SQLite", level: "Intermediate", category: "Database" },
     { name: "MySQL", level: "Intermediate", category: "Database" },
+    { name: "PostgreSQL", level: "Intermediate", category: "Database" },
     { name: "Git", level: "Advanced", category: "Tool" },
     { name: "Linux", level: "Intermediate", category: "Tool" },
     { name: "Markdown", level: "Advanced", category: "Tool" },
@@ -204,6 +213,12 @@ export interface Project {
 }
 
 export const SKILL_LOGOS: SkillLogo[] = [
+  { name: "Godot 4", path: "/tech-logos/godot.svg" },
+  { name: "Android SDK", path: "/tech-logos/android.svg" },
+  { name: "HTML5", path: "/tech-logos/html5.svg" },
+  { name: "PHP", path: "/tech-logos/php.svg" },
+  { name: "Laravel", path: "/tech-logos/laravel.svg" },
+  { name: "Flutter", path: "/tech-logos/flutter.svg" },
   { name: "C", path: "/tech-logos/c.svg" },
   { name: "C++", path: "/tech-logos/cpp.svg" },
   { name: "Python", path: "/tech-logos/python.svg" },
@@ -241,6 +256,36 @@ export const SKILL_LOGOS: SkillLogo[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "LifeFlow",
+    images: [
+      "/Life Flow Screenshots/home Dark.png",
+      "/Life Flow Screenshots/home recent.png",
+      "/Life Flow Screenshots/Home Light.png",
+      "/Life Flow Screenshots/Login.png",
+      "/Life Flow Screenshots/Profile.png",
+      "/Life Flow Screenshots/Task manager.png",
+      "/Life Flow Screenshots/Task Manager Light.png",
+      "/Life Flow Screenshots/Expense Manager.png",
+      "/Life Flow Screenshots/Habit Tracker.png",
+      "/Life Flow Screenshots/Set Monthly Budget.png",
+      "/Life Flow Screenshots/Weekly analytics.png",
+      "/Life Flow Screenshots/Statistic light mode.png",
+      "/Life Flow Screenshots/Custom Category.png",
+      "/Life Flow Screenshots/Budget Exceedingg warning.png"
+    ],
+    description: "A comprehensive productivity and lifestyle management application combining task management, expense tracking, habit tracking, and analytics.",
+    techStack: ["Flutter", "Riverpod", "Dio", "Laravel", "PHP", "SQLite", "MySQL", "PostgreSQL"],
+    githubUrl: "https://github.com/SnoOpWo0t/LifeFlow",
+    githubRepo: "SnoOpWo0t/LifeFlow",
+    liveUrl: null,
+    featured: true,
+    image: "/projects/LifeFlow.png",
+    category: "Mobile Application",
+    status: "active",
+    tags: ["Productivity", "Finance", "Cross-Platform"],
+    highlight: "Comprehensive lifestyle management app",
+  },
   {
     title: "Snakhi.io",
     images: [
