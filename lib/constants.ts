@@ -349,6 +349,7 @@ export const PROJECTS: Project[] = [
   {
     title: "RootReach",
     images: [
+      "/projects/RootReach thumbnail.png",
       "/RootReach Screenshots/1.png",
       "/RootReach Screenshots/2.png",
       "/RootReach Screenshots/3.png",
