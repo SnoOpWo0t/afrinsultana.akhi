@@ -380,10 +380,14 @@ export default function Projects() {
               key={f}
               onClick={() => setFilter(f)}
               aria-pressed={filter === f}
-              className={`flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-ctp-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base ${
+              className={`flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-medium transition-all duration-300 focus-visible:ring-2 focus-visible:ring-ctp-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base ${
                 filter === f
-                  ? "bg-ctp-blue text-ctp-crust"
+                  ? "bg-ctp-blue text-ctp-crust shadow-[0_0_15px_rgba(137,180,250,0.5)]"
                   : "text-ctp-subtext0 hover:text-ctp-text bg-ctp-surface0/30"
+              } ${
+                f === "all" && filter !== "all"
+                  ? "border border-ctp-blue/60 shadow-[0_0_10px_rgba(137,180,250,0.4)] hover:shadow-[0_0_20px_rgba(137,180,250,0.7)] hover:border-ctp-blue"
+                  : ""
               }`}
             >
               <Icon className="w-4 h-4" />

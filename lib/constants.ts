@@ -148,6 +148,7 @@ export const ABOUT_CARDS: AboutCard[] = [
 
 export const SKILLS = {
   languages: [
+    { name: "C#", level: "Advanced", category: "Programming Language" },
     { name: "HTML5", level: "Advanced", category: "Programming Language" },
     { name: "GDScript", level: "Intermediate", category: "Programming Language" },
     { name: "C", level: "Advanced", category: "Programming Language" },
@@ -158,6 +159,7 @@ export const SKILLS = {
     { name: "TypeScript", level: "Beginner", category: "Programming Language" },
   ],
   frameworks: [
+    { name: "ASP.NET Core", level: "Advanced", category: "Framework" },
     { name: "Godot 4", level: "Intermediate", category: "Framework" },
     { name: "Android SDK", level: "Intermediate", category: "Framework" },
     { name: "Next.js", level: "Intermediate", category: "Framework" },
@@ -168,6 +170,7 @@ export const SKILLS = {
     { name: "Tailwind CSS", level: "Advanced", category: "Framework" },
   ],
   tools: [
+    { name: "Docker", level: "Intermediate", category: "Tool" },
     { name: "2D Software", level: "Intermediate", category: "Tool" },
     { name: "SQLite", level: "Intermediate", category: "Database" },
     { name: "MySQL", level: "Intermediate", category: "Database" },
@@ -213,6 +216,7 @@ export interface Project {
 }
 
 export const SKILL_LOGOS: SkillLogo[] = [
+  { name: "Docker", path: "/tech-logos/docker.svg" },
   { name: "Godot 4", path: "/tech-logos/godot.svg" },
   { name: "Android SDK", path: "/tech-logos/android.svg" },
   { name: "HTML5", path: "/tech-logos/html5.svg" },
@@ -388,6 +392,44 @@ export const PROJECTS: Project[] = [
     highlight: "Comprehensive lifestyle management app",
   },
   {
+    title: "Assignment & Submission Management System",
+    images: [
+      "/Assignment & Submission Management System Screenshots/Log in.png",
+      "/Assignment & Submission Management System Screenshots/Admin Dashboard.png",
+      "/Assignment & Submission Management System Screenshots/Admin (8).png",
+      "/Assignment & Submission Management System Screenshots/Admin Assignment Oversight.png",
+      "/Assignment & Submission Management System Screenshots/Admin Class Management.png",
+      "/Assignment & Submission Management System Screenshots/Admin Create Subject.png",
+      "/Assignment & Submission Management System Screenshots/Admin Subj Management.png",
+      "/Assignment & Submission Management System Screenshots/Admin Submission Oversight.png",
+      "/Assignment & Submission Management System Screenshots/Admin Users.png",
+      "/Assignment & Submission Management System Screenshots/Admin assign Student to Class.png",
+      "/Assignment & Submission Management System Screenshots/Student Dashboard.png",
+      "/Assignment & Submission Management System Screenshots/Stuudent (3).png",
+      "/Assignment & Submission Management System Screenshots/Stuudent (5).png",
+      "/Assignment & Submission Management System Screenshots/Stuudent (6).png",
+      "/Assignment & Submission Management System Screenshots/Submit assignment.png",
+      "/Assignment & Submission Management System Screenshots/Submit assignment 2.png",
+      "/Assignment & Submission Management System Screenshots/Teacher (2).png",
+      "/Assignment & Submission Management System Screenshots/Teacher (3).png",
+      "/Assignment & Submission Management System Screenshots/Teacher (4).png",
+      "/Assignment & Submission Management System Screenshots/Teacher Creating Assignment.png",
+      "/Assignment & Submission Management System Screenshots/Teacher Submission View & Grading.png"
+    ],
+    description: "A comprehensive platform for schools to manage classes, assignments, and submissions with distinct portals for Admins, Teachers, and Students.",
+    techStack: ["C#", "Next.js", "React", "Tailwind CSS", "ASP.NET Core", "CQRS", "PostgreSQL", "Docker"],
+    githubUrl: "https://github.com/SnoOpWo0t/Assignment-Submission-Management-System",
+    githubRepo: "SnoOpWo0t/Assignment-Submission-Management-System",
+    liveUrl: null,
+    featured: true,
+    wide: false,
+    image: "/Assignment & Submission Management System Screenshots/Admin Dashboard.png",
+    category: "Web Development",
+    status: "active",
+    tags: ["Education", "Management System"],
+    highlight: "Clean Architecture backend",
+  },
+  {
     title: "Different-Programming-Platform",
     description:
       "GitHub repository of 1000+ solutions for problems from Codeforces, LeetCode, and 25+ other online judges. Maintained regularly.",
@@ -396,6 +438,7 @@ export const PROJECTS: Project[] = [
     githubRepo: "SnoOpWo0t/Different-Programming-Platform",
     liveUrl: null,
     featured: true,
+    wide: false,
     image: "/projects/DifferentCodeplatform.png",
     category: "Competitive Programming",
     status: "active",

@@ -171,7 +171,7 @@ export default function Footer() {
                         }
                   }
                   transition={{ duration: 0.2, ease }}
-                  className="group flex items-center gap-2 rounded-lg border border-ctp-surface0/60 bg-ctp-surface0/30 px-3 py-2 text-sm text-ctp-subtext0 transition-colors hover:border-ctp-surface1 hover:text-ctp-text"
+                  className="group flex items-center gap-2 rounded-lg border border-ctp-blue/60 bg-ctp-surface0/30 px-3 py-2 text-sm text-ctp-subtext0 transition-all duration-300 shadow-[0_0_10px_rgba(137,180,250,0.4)] hover:shadow-[0_0_20px_rgba(137,180,250,0.7)] hover:border-ctp-blue hover:text-ctp-text focus-visible:ring-2 focus-visible:ring-ctp-blue focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
                   aria-label="My PC Configuration"
                 >
                   <Monitor className="h-4 w-4" />
