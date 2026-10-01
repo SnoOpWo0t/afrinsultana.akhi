@@ -124,7 +124,7 @@ export const ABOUT_CARDS: AboutCard[] = [
     layout: "feature",
     content: {
       kind: "paragraph",
-      text: "Fourth-year Computer Science and Engineering student at University of Asia Pacific, building projects like Horizon and RootReach.",
+      text: "Jr. Full-Stack Developer at BooleanForce .",
     },
   },
   {
@@ -721,6 +721,18 @@ export const ACHIEVEMENTS: Achievement[] = [
 ];
 
 export const EXPERIENCE = [
+  {
+    title: "Jr. Full-Stack Developer",
+    organization: "BooleanForce",
+    location: "Remote",
+    startDate: "August 2026",
+    endDate: "Present",
+    description: [
+      "Developed and maintained full-stack web applications, implemented features by understanding requirements, optimized performance, and resolved issues in Agile teams.",
+      "Technologies: JavaScript, TypeScript, React.js, Next.js, Node.js, Django, PostgreSQL, FastAPI, MongoDB",
+    ],
+    type: "work",
+  },
   {
     title: "BSc (Eng.) in Computer Science and Engineering",
     organization: "University of Asia Pacific",
