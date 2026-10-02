@@ -398,7 +398,7 @@ export const PROJECTS: Project[] = [
     techStack: ["React", "Next.js", "Tailwind CSS"],
     githubUrl: "https://github.com/SnoOpWo0t/movie-explorer",
     githubRepo: "SnoOpWo0t/movie-explorer",
-    liveUrl: "https://movie-explorer-kjkgipixe-snoopwo0ts-projects.vercel.app/",
+    liveUrl: "https://movie-explorer-olive.vercel.app/",
     featured: true,
     wide: false,
     image: "",
