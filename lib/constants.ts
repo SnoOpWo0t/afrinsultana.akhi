@@ -392,6 +392,22 @@ export const PROJECTS: Project[] = [
     highlight: "Comprehensive lifestyle management app",
   },
   {
+    title: "Movie Explorer",
+    description:
+      "A web application to explore and discover movies.",
+    techStack: ["React", "Next.js", "Tailwind CSS"],
+    githubUrl: "https://github.com/SnoOpWo0t/movie-explorer",
+    githubRepo: "SnoOpWo0t/movie-explorer",
+    liveUrl: "https://movie-explorer-kjkgipixe-snoopwo0ts-projects.vercel.app/",
+    featured: true,
+    wide: false,
+    image: "",
+    category: "Web Development",
+    status: "active",
+    tags: ["Movies", "Entertainment"],
+    highlight: "Movie discovery platform",
+  },
+  {
     title: "Assignment & Submission Management System",
     images: [
       "/Assignment & Submission Management System Screenshots/Admin (5).png",
@@ -486,21 +502,7 @@ export const PROJECTS: Project[] = [
     tags: ["Game Dev", "OpenGL"],
     highlight: "Classic arcade game clone",
   },
-  {
-    title: "Movie Explorer",
-    description:
-      "A web application to explore and discover movies.",
-    techStack: ["React", "Next.js", "Tailwind CSS"],
-    githubUrl: "https://github.com/SnoOpWo0t/movie-explorer",
-    githubRepo: "SnoOpWo0t/movie-explorer",
-    liveUrl: "https://movie-explorer-kjkgipixe-snoopwo0ts-projects.vercel.app/",
-    featured: false,
-    image: "",
-    category: "Web Development",
-    status: "active",
-    tags: ["Movies", "Entertainment"],
-    highlight: "Movie discovery platform",
-  },
+
   {
     title: "BeeCrowd URI Solutions",
     description:
