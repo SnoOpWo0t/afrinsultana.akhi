@@ -297,6 +297,15 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
+
+                {("certificateUrl" in featuredExperience && featuredExperience.certificateUrl) && (
+                  <div className="mt-5">
+                    <a href={featuredExperience.certificateUrl as string} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-ctp-surface1/60 bg-ctp-surface0/30 px-3 py-1.5 text-sm font-medium text-ctp-text transition-colors hover:border-ctp-surface2 hover:bg-ctp-surface1/40 hover:text-ctp-blue">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      View Certificate
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </motion.article>
@@ -392,6 +401,15 @@ export default function Experience() {
                           </li>
                         ))}
                       </ul>
+
+                      {("certificateUrl" in exp && exp.certificateUrl) && (
+                        <div className="mt-4">
+                          <a href={exp.certificateUrl as string} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-ctp-surface1/60 bg-ctp-surface0/30 px-3 py-1.5 text-xs font-medium text-ctp-text transition-colors hover:border-ctp-surface2 hover:bg-ctp-surface1/40 hover:text-ctp-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Certificate
+                          </a>
+                        </div>
+                      )}
                     </motion.article>
                   );
                 })}
